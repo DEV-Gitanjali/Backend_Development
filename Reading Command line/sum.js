@@ -15,3 +15,4 @@ interface.question("enter a number", (num1)=>{
     console.log(sum);
   }) 
 });
+
