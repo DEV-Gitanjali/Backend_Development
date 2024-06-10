@@ -11,11 +11,24 @@ const fs = require('fs');
 //  creating and writting a file
 try{
 
-  fs.writeFileSync('employee.text' , 'Name:subham pradhan , Age:22 , posstion:Software engineer');
+  fs.writeFileSync('employee.txt' , 'Name:subham pradhan , Age:22 , posstion:Software engineer');
 
   } catch(err){
     console.log(err);
   }
+
+// Append another employee data
+
+fs.appendFileSync('employee.txt' , '\nName:Gitanjali pradhan , Age:22 , posstion:Software engineer');
+
+// deleting a file
+try{
+
+  fs.unlinkSync('employee.text');
+}catch(err){
+
+  console.log('file does not exist');
+}
  
 
 console.log('This is another operation being performed');
