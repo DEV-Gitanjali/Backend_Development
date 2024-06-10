@@ -1,3 +1,0 @@
-name:Subham pradhan
-dept: Finance
-position:Manager
