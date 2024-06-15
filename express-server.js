@@ -10,6 +10,8 @@ const server =  express();
 //   console.log('first middleware');
 //   next();
 // })
+
+
 // multiple middleware
 
 function firstMiddleware(req, res, next){
@@ -21,14 +23,23 @@ function secondMiddleware(req, res, next){
   next();
 }
 
+function globalMiddleware(req, res, next){
+  console.log('global middleware');
+  next();
+}
+
+// this is going to be executed  for all requests
+server.use(globalMiddleware);
+
 
 // 2nd middleware
-  server.get( '/',[firstMiddleware , secondMiddleware] ,(req , res)=>{
+  server.get( '/send',[firstMiddleware , secondMiddleware] ,(req , res)=>{
 
   res.send('welcome to express server');
 });
 
 // listen on specified  port 
+// route level midlleware
 server.listen(3100 , ()=>{
   console.log(`server running at http://localhost:3200`);
 })
