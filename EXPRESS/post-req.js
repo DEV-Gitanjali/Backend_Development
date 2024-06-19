@@ -1,6 +1,6 @@
 // post req
 
-const express = require('express');
+const express = require('express')
 const server = express();
 // post request
 server.get('/' , (req , res)=>{
@@ -13,10 +13,13 @@ server.put('/' , (req , res)=>{
   res.send('this is put request');
 });
 server.delete('/' , (req , res)=>{
-  res.send('this is delete request');
+  res.status(201).send('this is delete request');
 });
 
 
 server.listen(3200 , ()=>{
   console.log('listening to port 3200')
-})
+});
+
+
+
